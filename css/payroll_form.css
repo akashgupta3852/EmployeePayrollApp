@@ -170,6 +170,12 @@ select {
     cursor: pointer;
 }
 
+error-output {
+    font-size: 18px;
+    font-style: italic;
+    color: red;
+}
+
 @media only screen and (max-width:960px) {
     .cancelButton {
         margin-left: 0px;
@@ -179,6 +185,10 @@ select {
     .form {
         width: 85%;
         padding: 44px 20px;
+    }
+
+    error-output {
+        font-size: 12px;
     }
 }
 
@@ -212,5 +222,9 @@ select {
     .buttonParent {
         flex-direction: column-reverse;
         align-items: flex-start;
+    }    
+
+    error-output {
+        font-size: 9px;
     }
 }

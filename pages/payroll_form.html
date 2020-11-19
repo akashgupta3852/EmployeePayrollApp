@@ -23,6 +23,7 @@
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
                 <input class="input" type="text" id="name" name="name" placeholder="Enter your name" required>
+                <error-output class="name-error" for="name"></error-output>
             </div>
 
             <div class="row-content">
@@ -86,6 +87,16 @@
                 salary.oninput = function() {
                     salaryOutput.textContent = salary.value;
                 };
+
+                const name = document.querySelector('#name');
+                const nameError = document.querySelector('.name-error');
+                name.addEventListener('input', function() {
+                    let nameRegex = RegExp('^[A-Z][a-z]{2,}$');
+                    if(nameRegex.test(name.value))
+                        nameError.textContent = "";
+                    else
+                        nameError.textContent = "Name is incorrect";
+                });
             </script>
 
             <div class="row-content">
