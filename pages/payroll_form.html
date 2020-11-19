@@ -6,6 +6,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/payroll_form.css">
     <title>Employe Payroll Form</title>
+    <script defer src="../js/EmployeePayroll.js"></script>
 </head>
 <body>
     <header class="header-content header">
@@ -51,9 +52,9 @@
              <div class="row-content">
                 <label class="label text" for="gender">Gender</label>
                 <div>
-                    <input type="radio" id="male" name="gender" value="male">
+                    <input type="radio" id="male" name="gender" value="Male">
                     <label class="text" for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="female">
+                    <input type="radio" id="female" name="gender" value="Female">
                     <label class="text" for="female">Female</label>
                 </div>
             </div>
@@ -79,25 +80,6 @@
                 <input class="input" type="range" name="salary" id="salary" min="300000" max="500000" step="100" value="400000">
                 <output class="salary-output text" for="salary"></output>
             </div>
-
-            <script>
-                const salary = document.querySelector('#salary');
-                const salaryOutput = document.querySelector('.salary-output');
-                salaryOutput.textContent = salary.value;
-                salary.oninput = function() {
-                    salaryOutput.textContent = salary.value;
-                };
-
-                const name = document.querySelector('#name');
-                const nameError = document.querySelector('.name-error');
-                name.addEventListener('input', function() {
-                    let nameRegex = RegExp('^[A-Z][a-z]{2,}$');
-                    if(nameRegex.test(name.value))
-                        nameError.textContent = "";
-                    else
-                        nameError.textContent = "Name is incorrect";
-                });
-            </script>
 
             <div class="row-content">
                 <label class="label text" for="startDate">Start Date</label>
@@ -138,18 +120,18 @@
                     </select>
                     <select id="month" name="Month">
                         <option>Month</option>
-                        <option value="Jan">January</option>
-                        <option value="Feb">February</option>
-                        <option value="Mar">March</option>
-                        <option value="Apr">April</option>
-                        <option value="May">May</option>
-                        <option value="Jun">June</option>
-                        <option value="Jul">July</option>
-                        <option value="Aug">August</option>
-                        <option value="Sep">September</option>
-                        <option value="Oct">October</option>
-                        <option value="Nov">November</option>
-                        <option value="Dec">December</option>
+                        <option value=1>January</option>
+                        <option value=2>February</option>
+                        <option value=3>March</option>
+                        <option value=4>April</option>
+                        <option value=5>May</option>
+                        <option value=6>June</option>
+                        <option value=7>July</option>
+                        <option value=8>August</option>
+                        <option value=9>September</option>
+                        <option value=10>October</option>
+                        <option value=11>November</option>
+                        <option value=12>December</option>
                     </select>
                     <select id="year" name="Year">
                         <option>Year</option>
