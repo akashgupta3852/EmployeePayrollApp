@@ -96,7 +96,7 @@ function save() {
         let deptList = new Array();
         let departments = document.querySelectorAll('input[name=department]:checked');
         for (let i = 0; i < departments.length; i++) {
-            deptList.push(department[i].value);
+            deptList.push(departments[i].value);
         }
         let salary = document.querySelector('#salary').value;
         let year = document.querySelector('#year').value;
