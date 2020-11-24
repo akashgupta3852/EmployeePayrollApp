@@ -6,9 +6,8 @@ class EmployeePayrollData {
     }
 
     get profilePic() {
-        return this._profilePic;;
+        return this._profilePic;
     }
-
 
     get gender() {
         return this._gender;
@@ -39,6 +38,10 @@ class EmployeePayrollData {
             throw "Name is incorrect";
     }
 
+    set profilePic(profilePic) {
+        return this._profilePic = profilePic;
+    }
+
     set department(department) {
         this._department = department;
     }
@@ -63,8 +66,8 @@ class EmployeePayrollData {
     toString() { 
         const options = { year: 'numeric', month: 'long', day: 'numeric' };
         const empDate = !this._startDate ? "undefined" : new Date(this.startDate).toLocaleDateString("en-US", options);
-        return "Name: " + this._name + "\n Profile Pic: " + this._profilePic  + "\n Gender: " + this._gender 
-                + "\n Department: " + this._department + "\n Salary: " + this._salary + "\n Start Date: " 
-                + empDate + "\n Notes: " + this._notes;
+        return "Name: " + this._name + "\nProfile Pic: " + this._profilePic  + "\nGender: " + this._gender 
+                + "\nDepartment: " + this._department + "\nSalary: " + this._salary + "\nStart Date: " 
+                + empDate + "\nNotes: " + this._notes;
     }
 }

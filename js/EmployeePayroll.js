@@ -104,7 +104,7 @@ function save() {
         let deptList = new Array();
         let departments = document.querySelectorAll('input[name=department]:checked');
         if(departments.length == 0)
-            throw "Select at least one department"
+            throw "Select at least one departmenty"
         for (let i = 0; i < departments.length; i++) {
             deptList.push(departments[i].value);
         }
