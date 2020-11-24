@@ -20,7 +20,7 @@
         </div>
     </header>
     <div class="form-content">
-        <form class="form" action="#" onreset="resetForm()" onsubmit="save()">
+        <form class="form" action="#" onsubmit="save()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
@@ -154,7 +154,7 @@
                 <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
                     <button type="submit" class="submitButton button" id="submitButton">Submit</button>
-                    <button type="reset" class="resetButton button">Reset</button>
+                    <button type="button" class="resetButton button" onclick="resetForm()">Reset</button>
                 </div>
             </div>
         </form>
