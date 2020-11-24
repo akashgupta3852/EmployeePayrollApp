@@ -1,8 +1,16 @@
+let empPayrollList;
 window.addEventListener('DOMContentLoaded', () => {
+    empPayrollList = getEmployeeDataFromStorage();
+    document.querySelector(".emp-count").textContent = empPayrollList.length;
     createInnerHtml();
 });
 
+const getEmployeeDataFromStorage = () => {
+    return localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.getItem('EmployeePayrollList')) : [];
+}
+
 const createInnerHtml = () => {
+    if(empPayrollList.length == 0) return;
     const headerHTML = "<tr>" 
                         + "<th></th>    <th> Name </th>    <th> Gender </th>" 
                         + "<th> Department </th>    <th> Salary </th> "
@@ -10,7 +18,6 @@ const createInnerHtml = () => {
                         + "</tr>";
 
     let innerHTMLFromJS = `${headerHTML}`;
-    let empPayrollList = createEmployeePayrollJSON();
     for(let empPayrollData of empPayrollList) {
         innerHTMLFromJS = `${innerHTMLFromJS}
         <tr>
@@ -28,36 +35,6 @@ const createInnerHtml = () => {
         `;
     }
     document.querySelector('#table-display').innerHTML = innerHTMLFromJS;
-}
-
-const createEmployeePayrollJSON = () => {
-    let empPayrollListLocal = [
-        {
-            _name:'Diksha Gupta',
-            _gender:'Female',
-            _department:[
-                'HR'
-            ],
-            _salary:'500000',
-            _startDate: '29 Oct 2019',
-            _note: '',
-            _id: new Date().getTime(),
-            _profilePic: '../assets/profile-images/Ellipse 1.png'
-        },
-        {
-            _name:'Akash Gupta',
-            _gender:'Male',
-            _department:[
-                'Engineering'
-            ],
-            _salary:'400000',
-            _startDate: '29 Aug 2019',
-            _note: '',
-            _id: new Date().getTime() + 1,
-            _profilePic: '../assets/profile-images/Ellipse -2.png'
-        }
-    ];
-    return empPayrollListLocal;
 }
 
 const getDeptHtml = (deptList) => {
